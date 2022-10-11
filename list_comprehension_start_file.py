@@ -37,7 +37,11 @@ for i in original_list:
 # 1 Using a list comprehension, create a new list called "newlist" out of the list "numbers", 
 # which contains only the positive numbers from the list, as integers.
 
+from curses.ascii import isalpha, isdigit
+
+
 numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
+
 
 
 
@@ -47,7 +51,8 @@ numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
 
 sentence = "the quick brown fox jumps over the lazy dog"
 words = sentence.split()
-
+list1=[len(x) for x in words if x != "the"]
+print(list1)
 
 
 ## Given dictionary is consisted of vehicles and their weights in kilograms. 
@@ -56,12 +61,14 @@ words = sentence.split()
 
 dict={"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400, 
 "Semi": 13600, "Bicycle": 7, "Motorcycle": 110}
-
+dict2=[x.upper() for x in dict.keys() if dict[x]<5000]
+print(dict2)
 
 
 
 ## Find all the numbers from 1 to 1000 that have a 4 in them
-
+find4=[x for x in range(1000) if "4" in str(x)]
+print(find4)
 
 
 ## count how many times the word 'the' appears in the text file - 'sometext.txt'
@@ -70,8 +77,7 @@ dict={"Sedan": 1500, "SUV": 2000, "Pickup": 2500, "Minivan": 1600, "Van": 2400,
 
 ## Extract the numbers from the following phrase ##
 
-phrase = 'In 1984 there were 13 instances of a protest with over 1000 people attending. On average there were 15 reported injuries at each " +
-"event, with about 3 or 4 that were classifled as serious per event.'
+phrase = "In 1984 there were 13 instances of a protest with over 1000 people attending. On average there were 15 reported injuries at each event, with about 3 or 4 that were classifled as serious per event."
 
 
 
