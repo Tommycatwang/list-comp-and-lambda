@@ -42,7 +42,8 @@ from curses.ascii import isalpha, isdigit
 
 numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
 
-
+newlist = [int(x) for x in numbers if x > 0]
+print(newlist)
 
 
 
@@ -50,7 +51,7 @@ numbers = [34.6, -203.4, 44.9, 68.3, -12.2, 44.6, 12.7]
 ## a sentence except for the word 'the'
 
 sentence = "the quick brown fox jumps over the lazy dog"
-words = sentence.split()
+words = sentence.split(' ')
 list1=[len(x) for x in words if x != "the"]
 print(list1)
 
@@ -72,15 +73,18 @@ print(find4)
 
 
 ## count how many times the word 'the' appears in the text file - 'sometext.txt'
+infile = open('sometext.txt','r')
+infile1=infile.read()
 
-
-
+result = len([x for x in infile1.split(' ') if x in ['the','The']])
+print(result)
+infile.close()
 ## Extract the numbers from the following phrase ##
 
 phrase = "In 1984 there were 13 instances of a protest with over 1000 people attending. On average there were 15 reported injuries at each event, with about 3 or 4 that were classifled as serious per event."
 
-
-
+number= [x for x in phrase.split(' ') if x.isdigit()]
+print(number)
 
 
 
